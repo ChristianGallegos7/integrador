@@ -1,6 +1,7 @@
 <?php
 // Incluir el archivo de configuración de la base de datos
 include "./includes/config/database.php";
+require "./includes/templates/header.php";
 
 // Conectar a la base de datos
 $conexion = conectarDb();
@@ -62,14 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Cerrar la conexión a la base de datos
 mysqli_close($conexion);
-
-require "./includes/templates/header.php";
 ?>
-
-<main class="body-login">
-    <div class="container mt-5 enter">
-        <div class="col-md-6">
-            <h1 class="text-center mb-4">Iniciar Sesión</h1>
+<main class="main-login">
+    <div class="container">
+        <div class="formulario-container">
+            <h1>Iniciar Sesión</h1>
             <?php foreach ($errores as $error) : ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $error; ?>
@@ -90,10 +88,11 @@ require "./includes/templates/header.php";
                     <button type="submit" class="btn loginbtn">Iniciar Sesión</button>
                 </fieldset>
             </form>
+            <p>¿No tienes una cuenta? <a href="http://localhost/integrador/registro.php">Crear cuenta</a></p>
         </div>
     </div>
-    
 </main>
+
 
 
 

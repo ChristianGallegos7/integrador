@@ -482,10 +482,41 @@ template {
     border-radius: 7px;
 }
 
-.body-login{
+.main-login{
     background-image: url('../../build/img/banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 5rem;
+}
+.main-registro{
+    background-image: url('../../build/img/banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 5rem;
+}
+.main-login h1 {
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-.body-login .loginbtn{
+.main-login .loginbtn{
+    background-color: var(--verdeClaro);
+    transition: all .3s ease-in;
     font-weight: 700;
 }
+
+.main-login .loginbtn:hover{
+    background-color: var(--verde);
+}
+
+.formulario-container {
+    max-width: 400px; /* Ajusta este valor según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+}
+

@@ -1,6 +1,7 @@
 <?php
 //base de datos
 include "./includes/config/database.php";
+
 $conexion = conectarDb();
 
 //arreglo de errores
@@ -44,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     //hash a la contraseña
     $contrasenaHash = password_hash($contrasena, PASSWORD_BCRYPT);
-    
+
     if (empty($errores)) {
         //query para insertar en la base
         $query = "INSERT INTO tbl_usuarios(nombre,apellido,cedula,telefono,correo,contrasena,rol) VALUES('$nombre','$apellido','$cedula','$telefono','$correo','$contrasenaHash', $rol)";
@@ -61,53 +62,65 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 //cerrar la conexion
 mysqli_close($conexion);
-
+require "./includes/templates/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<main class="main-registro">
+    <div class="container">
+        <div class="formulario-container">
+        <h1>Registrarse</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    
-    
-</head>
+            <?php foreach ($errores as $error) : ?>
+                <div class="alert alert-danger">
+                    <?php echo $error; ?>
+                </div>
+            <?php endforeach; ?>
 
-<body>
+            <form action="registro.php" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                </div>
 
-    <main>
-        <?php foreach($errores as $error):?>
-            <div class="alerta error">
-                <?php echo $error; ?>
-            </div>
-        <?php endforeach;?>    
-        <form action="registro.php" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>" >
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo $apellido; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa tu apellido.</div>
+                </div>
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" value="<?php echo $apellido;?>" >
+                <div class="mb-3">
+                    <label for="cedula" class="form-label">Cédula:</label>
+                    <input type="text" class="form-control" id="cedula" name="cedula" value="<?php echo $cedula; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa tu cédula.</div>
+                </div>
 
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" value="<?php echo $cedula;?>" >
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa tu número de teléfono.</div>
+                </div>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" name="telefono" value="<?php echo $telefono;?>" >
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $correo; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+                </div>
 
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" name="correo" value="<?php echo $correo;?>" >
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" value="<?php echo $contrasena; ?>" required>
+                    <div class="invalid-feedback">Por favor, ingresa una contraseña.</div>
+                </div>
 
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" value="<?php echo $contrasena;?>" >
+                <input type="hidden" name="rol" value="2">
 
-            <input type="hidden" name="rol" value="2">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</main>
 
-            <button type="submit">Registrarse</button>
-        </form>
-    </main>
-
-</body>
-
-</html>
+<?php
+require "./includes/templates/footer.php";
+?>

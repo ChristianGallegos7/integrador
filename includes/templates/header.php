@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100" >
 
 <head>
     <title>Citas Médicas🩺</title>
@@ -14,4 +14,4 @@
     <link rel="stylesheet" href="http://localhost/integrador/build/css/index.css">
 </head>
 
-<body>
+<body class="h-100">
