@@ -25,37 +25,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //     var_dump($errores);
     // echo "</pre>";
 
-    if(empty($errores)){
+    if (empty($errores)) {
         //revisar si el usuario existe
         $query = "SELECT * FROM tbl_usuarios WHERE correo = '$email' ";
-        $resultado = mysqli_query($conexion,$query);
+        $resultado = mysqli_query($conexion, $query);
 
         // var_dump($resultado);
-        if($resultado->num_rows){
+        if ($resultado->num_rows) {
             //revisar si el passoword es correcto
             $usuario = mysqli_fetch_assoc($resultado);
             //verificar si el passwors es correcto
 
-            $auth = password_verify($password,$usuario['contrasena']);
+            $auth = password_verify($password, $usuario['contrasena']);
 
-            if($auth){
+            if ($auth) {
                 //el usuario esta autenticado
                 session_start();
                 $_SESSION['usuario'] = $usuario['correo'];
                 $_SESSION['login'] = true;
 
-                if($usuario['rol']== "2"){
+                if ($usuario['rol'] == "2") {
                     header('Location: dash.php');
                     exit();
-                }else{
+                } else {
                     header('Location: ./admin/index.php');
                     exit();
                 }
-
-            }else{
+            } else {
                 $errores[] = "Contraseña incorrecta";
             }
-        }else{
+        } else {
             $errores[] = "Usuario no encontrado";
         }
     }
@@ -63,37 +62,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Cerrar la conexión a la base de datos
 mysqli_close($conexion);
+
+require "./includes/templates/header.php";
 ?>
 
+<main class="body-login">
+    <div class="container mt-5 enter">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Iniciar Sesión</h1>
+            <?php foreach ($errores as $error) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $error; ?>
+                </div>
+            <?php endforeach; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-</head>
-
-<body>
-    <h1>Iniciar Sesión</h1>
-    <?php foreach ($errores as $error) : ?>
-        <div>
-            <?php echo $error; ?>
+            <form action="login.php" method="post" novalidate class="formulario">
+                <fieldset>
+                    <legend class="visually-hidden">LOGIN</legend>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">E-Mail</label>
+                        <input type="text" class="form-control" name="correo" id="correo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn loginbtn">Iniciar Sesión</button>
+                </fieldset>
+            </form>
         </div>
-    <?php endforeach; ?>
+    </div>
+    
+</main>
 
-    <form action="login.php" method="post" novalidate class="formulario">
-        <fieldset>
-            <legend>LOGIN</legend>
-            <label for="correo">E-Mail</label>
-            <input type="text" name="correo" id="correo" required>
-            <label for="passsword">Constraseña</label>
-            <input type="password" name="password" id="password" required>
-            <button type="submit">Iniciar Sésion</button>
-        </fieldset>
 
-    </form>
-</body>
 
-</html>
+<?php
+require "./includes/templates/footer.php";
+?>

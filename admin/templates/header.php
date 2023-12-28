@@ -15,3 +15,14 @@
 </head>
 
 <body>
+
+    <header class="header header__section" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="http://localhost/proyecto/build/img/logo.webp" alt="ayudae">
+                </a>
+            </nav>
+        </div>
+        
+    </header>
