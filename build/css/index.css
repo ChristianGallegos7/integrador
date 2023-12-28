@@ -490,15 +490,10 @@ template {
     height: 100vh;
     padding: 5rem;
 }
-.main-registro{
-    background-image: url('../../build/img/banner.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding: 5rem;
-}
-.main-login h1 {
+
+
+
+.main-login h1, .main-registro h1{
     font-weight: 800;
     text-align: center;
     margin: 0;
@@ -515,8 +510,31 @@ template {
     background-color: var(--verde);
 }
 
+
+.main-registro{
+    background-image: url('../../build/img/banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 1rem;
+    
+}
+
+.main-registro .registrobtn{
+    background-color: var(--verdeClaro);
+    transition: all .3s ease-in;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.main-registro .registrobtn:hover{
+    background-color: var(--verde);
+}
+
+
+
 .formulario-container {
     max-width: 400px; /* Ajusta este valor según tus necesidades */
     margin: 0 auto; /* Centra horizontalmente el formulario */
 }
-

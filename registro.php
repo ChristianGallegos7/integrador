@@ -68,7 +68,7 @@ require "./includes/templates/header.php";
 <main class="main-registro">
     <div class="container">
         <div class="formulario-container">
-        <h1>Registrarse</h1>
+            <h1>Registrarse</h1>
 
             <?php foreach ($errores as $error) : ?>
                 <div class="alert alert-danger">
@@ -115,12 +115,10 @@ require "./includes/templates/header.php";
 
                 <input type="hidden" name="rol" value="2">
 
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn registrobtn">Registrarse</button>
             </form>
+            <p class="login-p text-center">Ya tienes una cuenta? <a href="http://localhost/integrador/login.php">Iniciar Sésion</a></p>
+
         </div>
     </div>
 </main>
-
-<?php
-require "./includes/templates/footer.php";
-?>

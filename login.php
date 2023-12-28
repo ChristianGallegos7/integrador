@@ -88,7 +88,7 @@ mysqli_close($conexion);
                     <button type="submit" class="btn loginbtn">Iniciar Sesión</button>
                 </fieldset>
             </form>
-            <p>¿No tienes una cuenta? <a href="http://localhost/integrador/registro.php">Crear cuenta</a></p>
+            <p class="text-center">¿No tienes una cuenta? <a href="http://localhost/integrador/registro.php">Crear cuenta</a></p>
         </div>
     </div>
 </main>
