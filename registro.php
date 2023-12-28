@@ -71,8 +71,10 @@ require "./includes/templates/header.php";
             <h1>Registrarse</h1>
 
             <?php foreach ($errores as $error) : ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger alert-dismissible fade show"  role="alert">
                     <?php echo $error; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
                 </div>
             <?php endforeach; ?>
 
@@ -122,3 +124,7 @@ require "./includes/templates/header.php";
         </div>
     </div>
 </main>
+
+<?php
+require "./includes/templates/footer.php";
+?>

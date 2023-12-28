@@ -69,8 +69,9 @@ mysqli_close($conexion);
         <div class="formulario-container">
             <h1>Iniciar Sesión</h1>
             <?php foreach ($errores as $error) : ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <?php echo $error; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php endforeach; ?>
 
