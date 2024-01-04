@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    $auth = $_SESSION['login'];
+    
+    if(!$auth){
+        header("Location: ../index.php");
+    }
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
