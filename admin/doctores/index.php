@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
 
     <h1 class="text-center">Listado de Doctores</h1>
-    <a href="http://localhost/proyecto/admin/doctores/crear.php" class="btn btn-primary mx-5">Crear doctor</a>
+    <a href="http://localhost/integrador/admin/doctores/crear.php" class="btn btn-primary mx-5">Crear doctor</a>
     
     <table class="table mt-3 container">
         <thead>

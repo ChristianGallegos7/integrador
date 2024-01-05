@@ -99,7 +99,7 @@ require "../../includes/templates/header.php";
         </div>
     <?php endforeach; ?>
 
-    <a href="http://localhost/proyecto/admin/doctores/index.php" class="crearVolver">Volver</a>
+    <a href="http://localhost/integrador/admin/doctores/index.php" class="crearVolver">Volver</a>
     
 
     <form action="" method="POST" enctype="multipart/form-data" class="formulario">

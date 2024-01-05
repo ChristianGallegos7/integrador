@@ -178,7 +178,7 @@ mysqli_close($conexion);
             <div>
                 <label for="foto">Foto:</label>
                 <input type="file" name="foto" id="foto" accept=".jpg">
-                <img width="150px" src="http://localhost/proyecto/imagenes/<?php echo $foto; ?>" alt="IMAGEN">
+                <img width="150px" src="http://localhost/integrador/imagenes/<?php echo $foto; ?>" alt="IMAGEN">
             </div>
             <div>
                 <label for="telefono">Telefono</label>

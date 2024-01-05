@@ -13,7 +13,7 @@ $registro = $_GET['registro'] ?? null;
 
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#">
-                <img class="logo" src="http://localhost/proyecto/build/img/logo.webp" alt="ayudae">
+                <img class="logo" src="http://localhost/integrador/build/img/logo.webp" alt="ayudae">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
