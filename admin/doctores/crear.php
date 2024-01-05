@@ -90,8 +90,8 @@ require "../../includes/templates/header.php";
 
 ?>
 
-<main>
-    <h1>Crear Doctor</h1>
+<main class="crear-doctor">
+    <h1 class="text-center">Crear Doctor</h1>
 
     <?php foreach ($errores as $error) : ?>
         <div>

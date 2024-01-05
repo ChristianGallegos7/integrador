@@ -78,7 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
         <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
+            <img src="http://localhost/integrador/build/img/logo.webp" alt="LOGO DE LA CLINICA">
+    
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -98,22 +99,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </nav>
     <?php if ($resultado == 1) : ?>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mx-auto w-25 mt-1" role="alert">
             Doctor Creado Correctamente
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
         </div>
     <?php elseif ($resultado == 2) : ?>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mx-auto w-25 mt-1" role="alert">
             Doctor Actualizado Correctamente
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
         </div>
     <?php elseif ($resultado == 3) : ?>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mx-auto w-25 mt-1" role="alert">
             Doctor Eliminado Correctamente
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
         </div>
     <?php endif; ?>
 
     <h1 class="text-center">Listado de Doctores</h1>
     <a href="http://localhost/integrador/admin/doctores/crear.php" class="btn btn-primary mx-5">Crear doctor</a>
-    
+
     <table class="table mt-3 container">
         <thead>
             <tr>

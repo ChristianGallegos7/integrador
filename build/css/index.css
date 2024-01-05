@@ -543,3 +543,29 @@ template {
 .crearVolver {
     color: #000000;
 }
+
+.formulario {
+    width: 80%;
+    margin: auto;
+  }
+  .formulario legend {
+    font-weight: 700;
+  }
+  .formulario div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  .btn-verde {
+    background-color: #07c4b4;
+    border: none;
+    color: #ffffff;
+    border-radius: 1rem;
+    font-weight: 700;
+  }
+
+  .crear-doctor {
+    background-image: url('../img/banner.webp');
+  }
