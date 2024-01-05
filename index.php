@@ -1,54 +1,67 @@
 <?php
 require "./includes/templates/header.php";
+//obtener para poder mostrar mensaje de que se registro correctamente un usuario
+$registro = $_GET['registro'] ?? null;
+
 ?>
 
 
-<header class="header header__section" id="header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <img class="logo" src="http://localhost/proyecto/build/img/logo.webp" alt="ayudae">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto animate__animated animate__fadeInLeft"> <!-- Alineado a la izquierda con animación -->
-                        
-                    </ul>
-                    <ul class="navbar-nav mx-auto"> <!-- Alineado al centro -->
-                        <!-- No hay elementos en este grupo -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#header">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#main">Especialidades</a>
-                        </li>
-                    </ul>
-                    
-                    <ul class="navbar-nav animate__animated animate__fadeInRight"> <!-- Alineado a la derecha con animación -->
-                        <li class="nav-item">
-                            <a href="http://localhost/integrador/login.php" class="nav-link">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://localhost/integrador/registro.php" class="nav-link">Register</a>
-                        </li>
-                    </ul>
+<header class="header header__section " id="header">
+
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="http://localhost/proyecto/build/img/logo.webp" alt="ayudae">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto animate__animated animate__fadeInLeft"> <!-- Alineado a la izquierda con animación -->
+
+                </ul>
+                <ul class="navbar-nav mx-auto"> <!-- Alineado al centro -->
+                    <!-- No hay elementos en este grupo -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#header">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main">Especialidades</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav animate__animated animate__fadeInRight"> <!-- Alineado a la derecha con animación -->
+                    <li class="nav-item">
+                        <a href="http://localhost/integrador/login.php" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost/integrador/registro.php" class="nav-link">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header__info animate__animated animate__fadeIn">
+        <div class="header__image">
+            <img src="http://localhost/integrador/build/img/img-1.webp" alt="IMAGEN DE PACIENTE">
+        </div>
+        <div class="header__text">
+            <?php if ($registro == 1) : ?>
+                <div class="alert alert-success alert-dismissible fade show mx-auto font-bold text-center" role="alert">
+                    Usuario Creado Correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
                 </div>
-            </nav>
+            <?php endif; ?>
+            <h1>CITAS MEDICAS</h1>
+            <p>Nuestro servicio está disponible en la ciudad de Quito.</p>
+            <p class="ultimo">Para agendar una cita deber crear una cuenta!</p>
+            <a href="http://localhost/integrador/registro.php" class="btn crear">Crear cuenta</a>
         </div>
-        <div class="header__info animate__animated animate__fadeIn">
-            <div class="header__image">
-                <img src="http://localhost/integrador/build/img/img-1.webp" alt="IMAGEN DE PACIENTE">
-            </div>
-            <div class="header__text">
-                <h1>CITAS MEDICAS</h1>
-                <p>Nuestro servicio está disponible en la ciudad de Quito.</p>
-                <p class="ultimo">Para agendar una cita deber crear una cuenta!</p>
-                <a href="http://localhost/integrador/registro.php" class="btn crear">Crear cuenta</a>
-            </div>
-        </div>
-    </header>
+    </div>
+</header>
 <div class="container">
     <main class="main__section" id="main">
         <div class="container">

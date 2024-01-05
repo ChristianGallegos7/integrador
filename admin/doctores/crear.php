@@ -6,6 +6,7 @@ $auth = $_SESSION['login'];
 if(!$auth){
     header("Location: ../index.php");
 }
+
 require "../../includes/config/database.php";
 
 $conexion = conectarDb();
@@ -84,7 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 mysqli_close($conexion);
 
-require "../templates/header.php";
+require "../../includes/templates/header.php";
+
 
 ?>
 

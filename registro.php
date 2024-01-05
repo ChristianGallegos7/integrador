@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
         if ($resultado) {
-            echo "Se inserto correctamene";
+            header("Location: ./index.php?registro=1");
         } else {
             echo "no se inserto";
         }

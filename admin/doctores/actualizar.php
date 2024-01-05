@@ -20,8 +20,7 @@ if (!$id) {
     exit;
 }
 
-include "../templates/header.php";
-
+require "../../includes/templates/header.php";
 $conexion = conectarDb();
 
 //obtener los datos del doctor

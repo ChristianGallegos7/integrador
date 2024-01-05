@@ -1,11 +1,11 @@
 <?php
-    // session_start();
+    session_start();
 
-    // $auth = $_SESSION['login'];
+    $auth = $_SESSION['login'];
     
-    // if(!$auth){
-    //     header("Location: ../index.php");
-    // }
+    if(!$auth){
+        header("Location: ../index.php");
+    }
 ?>
 
 <!doctype html>
@@ -53,24 +53,25 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <!-- Opción de Citas -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Citas</a>
-                        </li>
-
                         <!-- Opción de Cerrar Sesión -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Cerrar Sesión</a>
+                        <a class="nav-link" href="cerrar-sesion.php">Cerrar Sesión</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-        <main></main>
+        <main>
+
+            <a href="" class="btn btn-primary">Agendar Cita</a>
+        </main>
         <footer>
-            lugares
+            
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
+   
+    </script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

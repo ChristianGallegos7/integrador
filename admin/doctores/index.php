@@ -76,6 +76,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="container mt-5">
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/integrador/admin/doctores/index.php">Doctores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2">Sección 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">Sección 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <?php if ($resultado == 1) : ?>
         <div class="alert alert-success" role="alert">
             Doctor Creado Correctamente
@@ -90,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     <?php endif; ?>
 
+    <h1>Listado de Doctores</h1>
     <a href="http://localhost/proyecto/admin/doctores/crear.php" class="btn btn-primary">Crear doctor</a>
 
     <table class="table mt-3">
