@@ -74,20 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 
-<body class="container mt-5">
+<body class="">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
         <div class="container">
             <a class="navbar-brand" href="#">Logo</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -119,10 +111,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     <?php endif; ?>
 
-    <h1>Listado de Doctores</h1>
-    <a href="http://localhost/proyecto/admin/doctores/crear.php" class="btn btn-primary">Crear doctor</a>
-
-    <table class="table mt-3">
+    <h1 class="text-center">Listado de Doctores</h1>
+    <a href="http://localhost/proyecto/admin/doctores/crear.php" class="btn btn-primary mx-5">Crear doctor</a>
+    
+    <table class="table mt-3 container">
         <thead>
             <tr>
                 <th>Id</th>
