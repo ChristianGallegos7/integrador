@@ -136,29 +136,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 mysqli_close($conexion);
 
 ?>
-<main>
-    <h1>Actualizar Doctor</h1>
+<main class="crear-doctor">
+    <h1 class="m-0 text-center">Actualizar Doctor</h1>
 
     <?php foreach ($errores as $error) : ?>
-        <div>
+        <div class="alert alert-danger alert-dismissible fade show mx-auto w-25 mt-3" role="alert">
             <?php echo $error; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endforeach; ?>
+    <a href="http://localhost/integrador/admin/doctores/index.php" class="btn btn-warning mx-5">Volver</a>
+
     <form method="POST" enctype="multipart/form-data" class="formulario">
         <fieldset>
             <legend>Información General</legend>
 
             <div>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>">
-            </div>
+                <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre; ?>">
+            </div> 
             <div>
                 <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" value="<?php echo $apellido; ?>">
+                <input type="text" class="form-control" name="apellido" id="apellido" value="<?php echo $apellido; ?>">
             </div>
             <div>
                 <label for="especialidad">Especialidad:</label>
-                <select name="especialidad" id="especialidad">
+                <select class="form-control" name="especialidad" id="especialidad">
                     <option value="">Seleccione una especialdiad por Doctor</option>
                     <?php while ($row = mysqli_fetch_assoc($resultado)) : ?>
                         <option value="<?php echo $row['id']; ?>" <?php echo $especialidad === $row['id'] ? 'selected' : '' ?>>
@@ -169,26 +172,34 @@ mysqli_close($conexion);
             </div>
             <div>
                 <label for="hora_entrada">Hora de Entrada:</label>
-                <input type="time" name="hora_entrada" id="hora_entrada" value="<?php echo $hora_entrada; ?>">
+                <input type="time" class="form-control" name="hora_entrada" id="hora_entrada" value="<?php echo $hora_entrada; ?>">
             </div>
             <div>
                 <label for="hora_salida">Hora de Salida:</label>
-                <input type="time" name="hora_salida" id="hora_salida" value="<?php echo $hora_salida; ?>">
-            </div>
-            <div>
-                <label for="foto">Foto:</label>
-                <input type="file" name="foto" id="foto" accept=".jpg">
-                <img width="150px" src="http://localhost/integrador/imagenes/<?php echo $foto; ?>" alt="IMAGEN">
+                <input type="time" class="form-control" name="hora_salida" id="hora_salida" value="<?php echo $hora_salida; ?>">
             </div>
             <div>
                 <label for="telefono">Telefono</label>
-                <input type="tel" name="telefono" id="telefono" value="<?php echo $telefono; ?>">
+                <input type="tel" class="form-control" name="telefono" id="telefono" value="<?php echo $telefono; ?>">
             </div>
+            <div>
+                <label for="foto">Foto:</label>
+                <input type="file" class="form-control" name="foto" id="foto" accept=".jpg">
+                <img width="150px" src="http://localhost/integrador/imagenes/<?php echo $foto; ?>" alt="IMAGEN">
+            </div>
+            
 
-            <button type="submit" class="btn-verde">Actualizar Doctor</button>
+            <button type="submit" class="btn btn-verde">Actualizar Doctor</button>
+
         </fieldset>
     </form>
 </main>
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+<script src="http://localhost/integrador/build/js/app.js"></script>
 </body>
 
 </html>

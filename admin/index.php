@@ -50,10 +50,10 @@
                         <a class="nav-link" href="http://localhost/integrador/admin/doctores/index.php">Doctores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section2">Sección 2</a>
+                        <a class="nav-link" href="#section2">Citas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section3">Sección 3</a>
+                        <a class="nav-link" href="#section3">Administradores</a>
                     </li>
                 </ul>
             </div>

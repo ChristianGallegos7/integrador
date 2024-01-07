@@ -1,26 +1,26 @@
 <?php
-
+// include "../templates/header.php";
+include "../../includes/app.php";
+//autenticar
 session_start();
-
 $auth = $_SESSION['login'];
-
 if (!$auth) {
     header("Location: ../index.php");
 }
-// include "../templates/header.php";
-include "../../includes/config/database.php";
+use App\Doctor;
 
-$conexion = conectarDb();
-//Escribir el query
-$query = "SELECT * FROM tbl_doctores";
-//consultar la bd para mostrar los doctores en la tabla abajo, se hace el fetch assoc 
-$resultadoConsulta = mysqli_query($conexion, $query);
+//metodo para listar todos los doctores
 
-$queryEspecialidad = "SE";
+$doctores = Doctor::all();
+// //muestra mensaje condicional si se crea el doctor
+// $resultado = $_GET['resultado'] ?? null;
 
+// $conexion = conectarDb();
+// //Escribir el query
+// $query = "SELECT * FROM tbl_doctores";
+// //consultar la bd para mostrar los doctores en la tabla abajo, se hace el fetch assoc 
+// $resultadoConsulta = mysqli_query($conexion, $query);
 
-//muestra mensaje condicional si se crea el doctor
-$resultado = $_GET['resultado'] ?? null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -120,6 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <h1 class="text-center">Listado de Doctores</h1>
     <a href="http://localhost/integrador/admin/doctores/crear.php" class="btn btn-primary mx-5">Crear doctor</a>
+    <a href="http://localhost/integrador/admin/index.php" class="btn btn-success mx-5">Volver</a>
+
 
     <table class="table mt-3 container">
         <thead>

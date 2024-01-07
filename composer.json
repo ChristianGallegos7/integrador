@@ -1,0 +1,11 @@
+{
+    "name": "kodzer4/integrador",
+    "require": {
+        "intervention/image": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./clases"
+        }
+    }
+}

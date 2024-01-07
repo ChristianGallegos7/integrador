@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de configuración de la base de datos
-include "./includes/config/database.php";
+require "./includes/app.php";
 require "./includes/templates/header.php";
 
 // Conectar a la base de datos

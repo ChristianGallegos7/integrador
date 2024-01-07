@@ -1,6 +1,7 @@
 <?php
 //base de datos
-include "./includes/config/database.php";
+require "./includes/app.php";
+
 
 $conexion = conectarDb();
 
